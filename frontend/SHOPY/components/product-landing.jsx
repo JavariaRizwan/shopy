@@ -157,7 +157,7 @@ axios.get(`/api/productLanding/${id}`)
 .then((res)=>
 {
 setProduct(res.data);
-setSelectedImage(`http://localhost:5000/${res.data.p_image_1}`);
+setSelectedImage(`${import.meta.env.VITE_API_URL}/${res.data.p_image_1}`);
 })
 .catch((error)=>{
   toast.error("Error fetching products");
@@ -191,11 +191,11 @@ if(!product){
   return (
     <All>
       <First>
-        <div className="thumb" onClick={() => setSelectedImage(`http://localhost:5000/${product.p_image_1}`)}>
-          <img src={`http://localhost:5000/${product.p_image_1}`} alt="Thumbnail 1" />
+        <div className="thumb" onClick={() => setSelectedImage(`${import.meta.env.VITE_API_URL}/${product.p_image_1}`)}>
+          <img src={`${import.meta.env.VITE_API_URL}/${product.p_image_1}`} alt="Thumbnail 1" />
         </div>
-        <div className="thumb" onClick={() => setSelectedImage(`http://localhost:5000/${product.p_image_2}`)}>
-          <img src={`http://localhost:5000/${product.p_image_2}`} alt="Thumbnail 2" />
+        <div className="thumb" onClick={() => setSelectedImage(`${import.meta.env.VITE_API_URL}/${product.p_image_2}`)}>
+          <img src={`${import.meta.env.VITE_API_URL}/${product.p_image_2}`} alt="Thumbnail 2" />
         </div>
       </First>
 

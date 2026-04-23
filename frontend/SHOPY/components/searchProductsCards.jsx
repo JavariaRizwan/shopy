@@ -259,12 +259,12 @@ const SearchProducts = () => {
         {allProducts.map((item) => (
           <Cards key={item._id}>
             <img
-              src={`http://localhost:5000/${item.p_image_1.replace(/\\/g, "/")}`}
+              src={`${import.meta.env.VITE_API_URL}/${item.p_image_1.replace(/\\/g, "/")}`}
               className="main-img"
               alt="Main"
             />
             <img
-              src={`http://localhost:5000/${(item.p_image_2 || item.p_image_1).replace(/\\/g, "/")}`}
+              src={`${import.meta.env.VITE_API_URL}/${(item.p_image_2 || item.p_image_1).replace(/\\/g, "/")}`}
               alt="Hover"
               className="hover-img"
             />

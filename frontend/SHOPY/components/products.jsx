@@ -347,9 +347,9 @@ const filteredProducts =
         <CardScroll ref={cardScrollRef}>
           {filteredProducts.map((item) => (
             <Cards key={item._id}>
-              <img src={`http://localhost:5000/${item.p_image_1.replace(/\\/g, "/")}`} alt={item.p_name} className="main-img" />
+              <img src={`${import.meta.env.VITE_API_URL}/${item.p_image_1.replace(/\\/g, "/")}`} alt={item.p_name} className="main-img" />
               <img
-                src={`http://localhost:5000/${item.p_image_2.replace(/\\/g, "/")}` || item.p_name}
+                src={`${import.meta.env.VITE_API_URL}/${item.p_image_2.replace(/\\/g, "/")}` || item.p_name}
                 alt="hover"
                 className="hover-img"
               />
@@ -406,10 +406,10 @@ export const Latest = () => {
         <CardScroll ref={cardScrollRef}>
           {latestProducts.map((item) => (
             <Cards key={item._id}>
-              <img   src={`http://localhost:5000/${item.p_image_1.replace(/\\/g, "/")}`} 
+              <img   src={`${import.meta.env.VITE_API_URL}/${item.p_image_1.replace(/\\/g, "/")}`} 
  alt={item.p_name} className="main-img" />
               <img
-                  src={`http://localhost:5000/${item.p_image_2.replace(/\\/g, "/")}`} 
+                  src={`${import.meta.env.VITE_API_URL}/${item.p_image_2.replace(/\\/g, "/")}`} 
 
                 alt="hover"
                 className="hover-img"
@@ -465,12 +465,12 @@ export const Footwear = () => {
             <Cards key={item._id}>
    
  
-<img src={`http://localhost:5000/${item.p_image_1.replace(/\\/g, "/")}`}
+<img src={`${import.meta.env.VITE_API_URL}/${item.p_image_1.replace(/\\/g, "/")}`}
   alt={item.p_name} 
   className="main-img" 
 />
 <img
-src={`http://localhost:5000/${item.p_image_2.replace(/\\/g, "/")}`} alt="hover"
+src={`${import.meta.env.VITE_API_URL}/${item.p_image_2.replace(/\\/g, "/")}`} alt="hover"
                 className="hover-img"
               />
               <StyledNavLink to={`/productLanding/${item._id}`}>

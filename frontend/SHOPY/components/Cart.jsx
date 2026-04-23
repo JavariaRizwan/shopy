@@ -259,7 +259,7 @@ return <>
   
 <Group><div key={item._id}>
     <div className="hello">
-    <img src={`http://localhost:5000/${item.productId.p_image_1.replace(/\\/g, "/")}`} alt={item.productId.p_name} />
+    <img src={`${import.meta.env.VITE_API_URL}/${item.productId.p_image_1.replace(/\\/g, "/")}`} alt={item.productId.p_name} />
     <div className="good">
     <StyledNav to={`/productLanding/${item.productId._id}`}> {item.productId.p_name.length > 30
     ? item.productId.p_name.slice(0, 30) + "..."

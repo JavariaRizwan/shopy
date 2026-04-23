@@ -475,7 +475,7 @@ const navigate=useNavigate();
               <CartItem key={item._id}>
                 <div className="combin">
                   <img
-                    src={`http://localhost:5000/${item.productId.p_image_1.replace(
+                    src={`${import.meta.env.VITE_API_URL}/${item.productId.p_image_1.replace(
                       /\\/g,
                       "/"
                     )}`}

@@ -222,7 +222,7 @@ const Cart = ({userId}) => {
       {cartItems.map((item) => (
         <CartRow key={item._id}>
                      <Item>
-             <img src={`http://localhost:5000/${item.productId.p_image_1.replace(/\\/g, "/")}`} alt={item.productId.p_name} />
+             <img src={`${import.meta.env.VITE_API_URL}/${item.productId.p_image_1.replace(/\\/g, "/")}`} alt={item.productId.p_name} />
              <div>
                <StyledNav to={`/productLanding/${item.productId._id}`}>{item.productId.p_name}</StyledNav>
               

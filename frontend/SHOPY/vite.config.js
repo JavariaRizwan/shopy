@@ -1,4 +1,3 @@
-
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
@@ -7,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: `${import.meta.env.VITE_API_URL}/api/products`,
+        target: 'http://localhost:5000',
         changeOrigin: true,
         secure: false,
       },

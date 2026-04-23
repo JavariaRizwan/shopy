@@ -163,7 +163,7 @@ useEffect(() => {
 
 const fetchCartQuantity = async () => {
   try {
-    const res = await axios.get(`/api/cartItems/${user._id}`);
+    const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/cartItems/${user._id}`);
     const totalQty = res.data.reduce((acc, item) => acc + item.quantity, 0);
     setCartQty(totalQty);
   } catch (err) {

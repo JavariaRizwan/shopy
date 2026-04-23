@@ -84,7 +84,7 @@ const AddressForm = () => {
       if (!user || !user._id) return;
 
       try {
-        const res = await axios.get(`/api/user_details/${user._id}`, {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/user_details/${user._id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -132,7 +132,7 @@ const AddressForm = () => {
         ...form,
       };
 
-      const response = await axios.post("/api/save_address_details", payload, {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/save_address_details`, payload, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",

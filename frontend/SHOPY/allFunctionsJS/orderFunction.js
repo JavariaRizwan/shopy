@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 export const makeOrder= async (orderData)=>{
 try {
-    const response=await axios.post("/api/makeOrder",orderData);
+    const response=await axios.post(`${import.meta.env.VITE_API_URL}/api/makeOrder`,orderData);
     if(response.status===201){
         toast.success("Happy Customer! Your order has been placed.");
         return response.data;

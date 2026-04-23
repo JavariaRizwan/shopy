@@ -153,7 +153,7 @@ const {id}=useParams();
   const [zoomStyle, setZoomStyle] = useState({});
  
 useEffect(()=>{
-axios.get(`/api/productLanding/${id}`)
+axios.get(`${import.meta.env.VITE_API_URL}/api/productLanding/${id}`)
 .then((res)=>
 {
 setProduct(res.data);

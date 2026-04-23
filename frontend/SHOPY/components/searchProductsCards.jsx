@@ -197,7 +197,7 @@ const SearchProducts = () => {
   const [selectedOption, setSelectedOption] = useState("");
 
   useEffect(() => {
-    axios.get(`/api/searchProduct/${tag}`).then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/api/searchProduct/${tag}`).then((res) => {
       setAllProducts(res.data);
       setProductCount(res.data.length);
     });

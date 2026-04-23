@@ -99,7 +99,7 @@ const VerifyOTP = () => {
     }
 
     try {
-      const res = await axios.post("/api/verify-otp", {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/verify-otp`, {
         email,
         otp: fullOtp,
       });

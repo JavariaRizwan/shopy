@@ -36,7 +36,7 @@ export const useCartQuantity = (userId, trigger) => {
   useEffect(() => {
     const fetchCartQuantity = async () => {
       try {
-        const res = await axios.get(`/api/cartItems/${userId}`);
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/cartItems/${userId}`);
         const totalQty = res.data.reduce((acc, item) => acc + item.quantity, 0);
         setCartQty(totalQty);
       } catch (err) {
@@ -60,7 +60,7 @@ export const useUserCartItems = (userId) => {
 
     const fetchCartItems = async () => {
       try {
-        const res = await axios.get(`/api/cartItems/${userId}`);
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/cartItems/${userId}`);
         setCartItems(res.data);
       } catch (error) {
         console.error("Error fetching user cart items:", error);
@@ -77,7 +77,7 @@ export const useUserCartItems = (userId) => {
 export const deleteItemFromcart= async (productId, setCartItems, toast, setTrigger)=>{
 try {
   
-const deleteItem= await axios.delete(`/api/deleteCartItem/${productId}`);
+const deleteItem= await axios.delete(`${import.meta.env.VITE_API_URL}/api/deleteCartItem/${productId}`);
 toast.success("Item deleted from cart!");
 
 setCartItems((prev)=>prev.filter((item)=>item._id!==productId));
@@ -93,7 +93,7 @@ setCartItems((prev)=>prev.filter((item)=>item._id!==productId));
   try {
     const user=JSON.parse(localStorage.getItem("user"));
     const userId=user?._id;
-    const response= await axios.delete(`/api/clearCart/${userId}`);
+    const response= await axios.delete(`${import.meta.env.VITE_API_URL}/api/clearCart/${userId}`);
     if(response){
       toast.success("Cart Cleared up successfully");
     }

@@ -196,7 +196,7 @@ const CompleteProducts = () => {
   const [selectedOption, setSelectedOption] = useState("");
 
   useEffect(() => {
-    axios.get("/api/all-products").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/api/all-products`).then((res) => {
       setAllProducts(res.data);
       setProductCount(res.data.length);
     });

@@ -84,7 +84,7 @@ const handleSubmit = async (e) => {
       return;
     }
 
-    const response = await axios.post("/api/register", {
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/register`, {
       fullName: formData.name,
       email: formData.email,
       password: formData.password,

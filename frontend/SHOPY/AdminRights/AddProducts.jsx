@@ -101,7 +101,7 @@ const AddProduct = () => {
         data.append(key, formData[key]);
       }
 
-      await axios.post("/api/admin/add-product", data, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/admin/add-product`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

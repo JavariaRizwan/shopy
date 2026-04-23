@@ -186,7 +186,7 @@ const Cart = ({userId}) => {
   const updateQuantity = async (itemId, currentQty, type) => {
     const newQty = type === "inc" ? currentQty + 1 : Math.max(1, currentQty - 1);
     try {
-      const res = await axios.put(`/api/setCartQuantity/${itemId}`, { quantity: newQty });
+      const res = await axios.put(`${import.meta.env.VITE_API_URL}/api/setCartQuantity/${itemId}`, { quantity: newQty });
       setCartItems((prev) =>
         prev.map((item) =>
           item._id === itemId ? { ...item, quantity: res.data.quantity } : item

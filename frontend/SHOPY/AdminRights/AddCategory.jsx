@@ -70,7 +70,7 @@ const AddCategory = () => {
    
 try {
 
-  const response=await axios.post("/api/admin/add-category",{
+  const response=await axios.post(`${import.meta.env.VITE_API_URL}/api/admin/add-category`,{
     c_name
   });
   setCName("");

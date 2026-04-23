@@ -118,7 +118,7 @@ const ShowAllProducts = ({selectedOption, setProductCount, categoryId}) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`/api/product_per_category/${categoryId}`); 
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/product_per_category/${categoryId}`); 
               let sortedData=[...response.data];
               switch(selectedOption){
                 case "lowToHigh":

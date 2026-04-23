@@ -109,7 +109,7 @@ const Categories = () => {
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const response = await axios.get("/api/category");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/category`);
         setCategories(response.data);
       } catch (error) {
         toast.error("Error fetching Categories " + error.message);

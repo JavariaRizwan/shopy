@@ -19,7 +19,7 @@ export const addToCart = async (product, quantity=1) => {
       quantity: quantity, // default quantity 1
     };
 
-    const res = await axios.post("/api/addToCart", cartItem);
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/addToCart`, cartItem);
     toast.success("Item added to cart!");
     console.log("Cart response:", res.data);
 

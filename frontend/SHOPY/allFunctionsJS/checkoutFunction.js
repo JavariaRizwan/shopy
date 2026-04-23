@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 export const getUserAddressStatus = async (userId) => {
   try {
-    const res = await axios.get(`/api/user_details/${userId}`);
+    const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/user_details/${userId}`);
    
     const user = res.data;
 //console.log("Fetched User Address:", user); // 🧠 Debugging line
@@ -27,7 +27,7 @@ export const getUserAddressStatus = async (userId) => {
 export const userDetails= async (userId)=>{
 try {
  
-  const res=await axios.get(`/api/user_details/${userId}`);
+  const res=await axios.get(`${import.meta.env.VITE_API_URL}/api/user_details/${userId}`);
   return res.data;
 
 } catch (error) {

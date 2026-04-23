@@ -270,7 +270,7 @@ export const Products = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/all-products").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/api/all-products`).then((res) => {
       setProducts(res.data);
     });
   }, []);
@@ -279,7 +279,7 @@ export const Products = () => {
   // Fetch all categories
   useEffect(() => {
 
-    axios.get("/api/category").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/api/category`).then((res) => {
 
       setCategories(res.data); // [{ _id, name }]
     });
@@ -381,7 +381,7 @@ export const Latest = () => {
   const [latestProducts, setLatestProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/latest-products").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/api/latest-products`).then((res) => {
       setLatestProducts(res.data);
     });
   }, []);
@@ -440,7 +440,7 @@ export const Footwear = () => {
   const [footwearProducts, setFootwearProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("/api/footwear").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/api/footwear`).then((res) => {
       setFootwearProducts(res.data);
     });
   }, []);

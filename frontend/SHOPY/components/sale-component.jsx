@@ -21,7 +21,7 @@ const Rit=styled.div`
 width:60%;
 border-radius:20px;
 text-align:right !important;
-background-image:url("../bskin.jpg"), url("../pskin.jpg");
+background-image:url("/bskin.jpg"), url("/pskin.jpg");
 background-repeat:repeat, repeat;
 background-position: left top, right top;
 color:rgb(28, 36, 92);
@@ -73,7 +73,7 @@ background-size:cover;
 height:47%;
 text-align:right;
 padding-right:10px;
-background-image:url("../sh.jpg");
+background-image:url("/sh.jpg");
 p{
 margin-top:30px;
 font-weight:700;
@@ -103,7 +103,7 @@ border-radius:20px;
 width:100%;
 padding-right:10px;
 
-background-image:url("../bm.jpg");
+background-image:url("/bm.jpg");
 text-align:right;
 p{
 margin-top:30px;

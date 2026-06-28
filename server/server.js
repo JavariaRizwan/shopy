@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors({
 origin:['http://localhost:5173', 'https://shopy-pk.netlify.app'],
 methods:["PUT","PATCH","DELETE","OPTIONS","POST","GET"],
-headers:["Content-Type","Authorization"],
+allowedHeaders:["Content-Type","Authorization"],
 credentials:true
 
 }));

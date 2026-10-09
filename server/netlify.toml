@@ -1,4 +1,4 @@
-```toml
+
 [build]
   command = "npm install"
   publish = "public"
@@ -19,4 +19,3 @@
   to = "/.netlify/functions/api/uploads/:splat"
   status = 200
   force = true
-```

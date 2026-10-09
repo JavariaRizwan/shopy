@@ -1,36 +1,20 @@
-const express=require("express");
-const connection=require("./connectionDB/connectDB");
-const router=require("./routes/user-router");
-const adminRouter=require("./routes/admin-router");
 
-const path = require("path"); // ✅ ADD THIS LINE
+require("dotenv").config();
 
-const app=express();
-const cors=require("cors");
-app.use(express.json());
+const connection = require("./connectionDB/connectDB");
+const app = require("./app");
 
-app.use(cors({
-origin:['http://localhost:5173', 'https://shopy-pk.netlify.app'],
-methods:["PUT","PATCH","DELETE","OPTIONS","POST","GET"],
-allowedHeaders:["Content-Type","Authorization"],
-credentials:true
+const PORT = process.env.PORT || 5000;
 
-}));
-
-//app.use("/uploads", express.static("uploads"));
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-
-app.use("/api/admin", adminRouter)
-app.use("/api", router);
-
-
-
-const PORT=5000;
-connection.then(()=>{
+connection
+  .then(() => {
     console.log("Database Connection Successful");
-app.listen(PORT, ()=>{
-    console.log(`App is running on port ${PORT}`); });
-}).catch((error)=>{
-console.log("Database Connection Failed", error.message);
 
-})
+    app.listen(PORT, () => {
+      console.log(`App is running on port ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.error("Database Connection Failed:", error.message);
+    process.exit(1);
+  });

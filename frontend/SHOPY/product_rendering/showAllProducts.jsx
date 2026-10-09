@@ -118,7 +118,7 @@ const ShowAllProducts = ({selectedOption, setProductCount, categoryId}) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/product_per_category/${categoryId}`); 
+        const response = await axios.get(`${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api/product_per_category/${categoryId}`); 
               let sortedData=[...response.data];
               switch(selectedOption){
                 case "lowToHigh":
@@ -158,9 +158,9 @@ if(categoryId){
           {products.map((item) => (
             <Cards key={item._id}>
 <img
-  src={`${import.meta.env.VITE_API_URL}/${item.p_image_1.replace(/\\/g, "/")}`} className="main-img"/>
+  src={`${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/${item.p_image_1.replace(/\\/g, "/")}`} className="main-img"/>
               <img
-  src={`${import.meta.env.VITE_API_URL}/${(item.p_image_2 || item.p_image_1).replace(/\\/g, "/")}`}
+  src={`${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/${(item.p_image_2 || item.p_image_1).replace(/\\/g, "/")}`}
                 alt="hover"
                 className="hover-img"
               />
